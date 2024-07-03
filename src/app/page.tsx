@@ -1,5 +1,6 @@
 import { ServicesCard } from "@/components/shared/cards/services";
 import { SectionHeading } from "@/components/shared/heading";
+import { CTASection } from "@/components/shared/sections/cta";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { H1, H2, H3, SecondaryText, Text } from "@/components/ui/typography";
 import { stats } from "@/constants/stats";
@@ -143,6 +144,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <CTASection />
     </>
   );
 }
