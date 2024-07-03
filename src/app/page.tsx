@@ -124,7 +124,12 @@ export default function Home() {
                 </Text>
               </li>
             </ul>
-            <Button className='w-[154px]'>About Us</Button>
+            <Link
+              href='/about'
+              className={buttonVariants({ className: "w-[154px]" })}
+            >
+              About Us
+            </Link>
           </div>
         </div>
       </section>
