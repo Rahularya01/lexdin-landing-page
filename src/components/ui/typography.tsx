@@ -10,7 +10,7 @@ export const textVariants = cva("", {
     },
 
     size: {
-      default: "text-base leading-[1.5]",
+      default: "text-base leading-[1.5] tracking-[0.01rem]",
       lg: "text-lg leading-[30px]",
       sm: "text-sm leading-6",
     },

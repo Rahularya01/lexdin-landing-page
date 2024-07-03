@@ -1,7 +1,7 @@
 import { ServicesCard } from "@/components/shared/cards/services";
 import { SectionHeading } from "@/components/shared/heading";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { H1, H3, SecondaryText, Text } from "@/components/ui/typography";
+import { H1, H2, H3, SecondaryText, Text } from "@/components/ui/typography";
 import { stats } from "@/constants/stats";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -82,6 +82,60 @@ export default function Home() {
               <ServicesCard key={index} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className='w-full pt-14 pb-24'>
+        <div className='container flex items-center gap-[72px]'>
+          <Image
+            src='/images/why_choose_us.png'
+            alt='Why Choose Us'
+            width={500}
+            height={500}
+            className='flex-shrink-0 w-[500px] h-[500px] object-cover'
+          />
+          <div className='space-y-[22px]'>
+            <H2>Why Choose Us?</H2>
+            <Text>
+              Our expert IT consulting services empower businesses to harness
+              the latest technologies, streamline operations, and achieve their
+              goals efficiently and effectively.
+            </Text>
+            <ul className='pl-6 list-disc'>
+              <li>
+                <Text>
+                  Skilled team, experienced in IT consulting and development.
+                </Text>
+              </li>
+              <li>
+                <Text>
+                  Tailored services for your unique needs, ensuring results.
+                </Text>
+              </li>
+              <li>
+                <Text>
+                  Proven track record of successful projects and outcomes.
+                </Text>
+              </li>
+              <li>
+                <Text>
+                  Customer-focused approach for exceptional service and
+                  satisfaction.
+                </Text>
+              </li>
+            </ul>
+            <Button className='w-[154px]'>About Us</Button>
+          </div>
+        </div>
+      </section>
+
+      <section className='w-full pt-[46px] pb-24'>
+        <div className='container'>
+          <SectionHeading
+            className='max-w-[780px]'
+            title='What Our Customers Says About Us'
+            description='Explore our comprehensive range of IT solutions designed to drive innovation, enhance efficiency, and accelerate your business growth.'
+          />
         </div>
       </section>
     </>
