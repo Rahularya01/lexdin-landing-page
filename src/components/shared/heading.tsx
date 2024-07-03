@@ -13,8 +13,8 @@ export const SectionHeading = forwardRef<HTMLDivElement, SectionHeadingProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col mx-auto gap-3 items-center text-center",
-          className
+          "mx-auto flex flex-col items-center gap-3 text-center",
+          className,
         )}
         {...props}
       >
@@ -22,7 +22,7 @@ export const SectionHeading = forwardRef<HTMLDivElement, SectionHeadingProps>(
         <Text>{description}</Text>
       </div>
     );
-  }
+  },
 );
 
 SectionHeading.displayName = "SectionHeading";

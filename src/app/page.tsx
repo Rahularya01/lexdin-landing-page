@@ -1,3 +1,4 @@
+import { Testimonials } from "@/components/pages/testimonials";
 import { ServicesCard } from "@/components/shared/cards/services";
 import { SectionHeading } from "@/components/shared/heading";
 import { CTASection } from "@/components/shared/sections/cta";
@@ -11,9 +12,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <section className='w-full py-[72px]'>
-        <div className='container flex items-center justify-between gap-[72px]'>
-          <div className='space-y-[22px] w-full'>
+      <section className="w-full py-[72px]">
+        <div className="container flex items-center justify-between gap-[72px]">
+          <div className="w-full space-y-[22px]">
             <H1>
               Empowering Business with{" "}
               <SecondaryText>IT Solutions</SecondaryText>
@@ -25,7 +26,7 @@ export default function Home() {
             </Text>
 
             <Link
-              href='/about'
+              href="/about"
               className={buttonVariants({
                 variant: "default",
                 className: "w-[208px]",
@@ -35,50 +36,50 @@ export default function Home() {
               Learn More
             </Link>
 
-            <div className='flex pt-6 items-center gap-[31px]'>
+            <div className="flex items-center gap-[31px] pt-6">
               {stats.map((stat, index) => (
                 <div
                   key={stat.name}
                   className={cn(
-                    "flex flex-col text-center items-center gap-2.5",
+                    "flex flex-col items-center gap-2.5 text-center",
                     {
-                      "px-[26px] border-x border-primary": index === 1,
-                    }
+                      "border-x border-primary px-[26px]": index === 1,
+                    },
                   )}
                 >
                   <H3>{stat.value}</H3>
-                  <Text className='text-sm'>{stat.name}</Text>
+                  <Text className="text-sm">{stat.name}</Text>
                 </div>
               ))}
             </div>
           </div>
-          <div className='w-[500px] h-[500px] flex-shrink-0 relative'>
-            <div className='absolute w-[167px] h-[167px] rounded-full bg-primary left-5 -bottom-[22px]'></div>
-            <div className='absolute w-[46px] h-[46px] rounded-full bg-secondary right-0 bottom-[90px]'></div>
-            <div className='absolute w-[31px] h-[31px] rounded-full bg-secondary top-2.5 right-[46px]'></div>
-            <div className='absolute w-[18px] h-[18px] rounded-full bg-secondary top-[63px] left-[30px]'></div>
-            <div className='absolute w-[18px] h-[18px] rounded-full bg-secondary -bottom-[23px] right-[171px]'></div>
+          <div className="relative h-[500px] w-[500px] flex-shrink-0">
+            <div className="absolute -bottom-[22px] left-5 h-[167px] w-[167px] rounded-full bg-primary"></div>
+            <div className="absolute bottom-[90px] right-0 h-[46px] w-[46px] rounded-full bg-secondary"></div>
+            <div className="absolute right-[46px] top-2.5 h-[31px] w-[31px] rounded-full bg-secondary"></div>
+            <div className="absolute left-[30px] top-[63px] h-[18px] w-[18px] rounded-full bg-secondary"></div>
+            <div className="absolute -bottom-[23px] right-[171px] h-[18px] w-[18px] rounded-full bg-secondary"></div>
 
             <Image
               src={"/images/hero.webp"}
-              alt='Hero Image'
+              alt="Hero Image"
               width={500}
               height={500}
-              className='w-full h-full object-cover rounded-full border-[4px] border-primary shadow-[25px_50px_70px_-20px] shadow-black/15'
+              className="h-full w-full rounded-full border-[4px] border-primary object-cover shadow-[25px_50px_70px_-20px] shadow-black/15"
             />
           </div>
         </div>
       </section>
 
-      <section className='w-full py-24'>
-        <div className='container space-y-[80px]'>
+      <section className="w-full py-24">
+        <div className="container space-y-[80px]">
           <SectionHeading
-            className='max-w-[780px]'
-            title='Our Services'
-            description='Explore our comprehensive range of IT solutions designed to drive innovation, enhance efficiency, and accelerate your business growth.'
+            className="max-w-[780px]"
+            title="Our Services"
+            description="Explore our comprehensive range of IT solutions designed to drive innovation, enhance efficiency, and accelerate your business growth."
           />
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-[61px]'>
+          <div className="grid grid-cols-1 gap-x-10 gap-y-[61px] md:grid-cols-2 lg:grid-cols-3">
             {new Array(6).fill(0).map((_, index) => (
               <ServicesCard key={index} />
             ))}
@@ -86,23 +87,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='w-full pt-14 pb-24'>
-        <div className='container flex items-center gap-[72px]'>
+      <section className="w-full pb-24 pt-14">
+        <div className="container flex items-center gap-[72px]">
           <Image
-            src='/images/why_choose_us.png'
-            alt='Why Choose Us'
+            src="/images/why_choose_us.png"
+            alt="Why Choose Us"
             width={500}
             height={500}
-            className='flex-shrink-0 w-[500px] h-[500px] object-cover'
+            className="h-[500px] w-[500px] flex-shrink-0 object-cover"
           />
-          <div className='space-y-[22px]'>
+          <div className="space-y-[22px]">
             <H2>Why Choose Us?</H2>
             <Text>
               Our expert IT consulting services empower businesses to harness
               the latest technologies, streamline operations, and achieve their
               goals efficiently and effectively.
             </Text>
-            <ul className='pl-6 list-disc'>
+            <ul className="list-disc pl-6">
               <li>
                 <Text>
                   Skilled team, experienced in IT consulting and development.
@@ -126,7 +127,7 @@ export default function Home() {
               </li>
             </ul>
             <Link
-              href='/about'
+              href="/about"
               className={buttonVariants({ className: "w-[154px]" })}
             >
               About Us
@@ -135,13 +136,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='w-full pt-[46px] pb-24'>
-        <div className='container'>
+      <section className="w-full pb-24 pt-[46px]">
+        <div className="container space-y-4">
           <SectionHeading
-            className='max-w-[780px]'
-            title='What Our Customers Says About Us'
-            description='Explore our comprehensive range of IT solutions designed to drive innovation, enhance efficiency, and accelerate your business growth.'
+            className="max-w-[780px]"
+            title="What Our Customers Says About Us"
+            description="Explore our comprehensive range of IT solutions designed to drive innovation, enhance efficiency, and accelerate your business growth."
           />
+
+          <Testimonials />
         </div>
       </section>
 

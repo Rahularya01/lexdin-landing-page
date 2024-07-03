@@ -25,6 +25,8 @@ export const textVariants = cva("", {
 interface H1Props extends React.ComponentPropsWithRef<"h1"> {}
 interface H2Props extends React.ComponentPropsWithRef<"h2"> {}
 interface H3Props extends React.ComponentPropsWithRef<"h3"> {}
+interface H4Props extends React.ComponentPropsWithRef<"h4"> {}
+
 interface TextProps
   extends React.ComponentPropsWithRef<"p">,
     VariantProps<typeof textVariants> {}
@@ -40,12 +42,12 @@ export const H1 = forwardRef<HTMLHeadingElement, H1Props>(
         ref={ref}
         className={cn(
           "text-3xl font-semibold leading-[44px] md:text-5xl md:leading-[1.4]",
-          className
+          className,
         )}
         {...props}
       />
     );
-  }
+  },
 );
 
 export const H2 = forwardRef<HTMLHeadingElement, H2Props>(
@@ -54,13 +56,13 @@ export const H2 = forwardRef<HTMLHeadingElement, H2Props>(
       <h2
         ref={ref}
         className={cn(
-          "text-2xl text-muted font-bold md:text-[34px] md:leading-[1.4]",
-          className
+          "text-2xl font-bold text-muted md:text-[34px] md:leading-[1.4]",
+          className,
         )}
         {...props}
       />
     );
-  }
+  },
 );
 
 export const H3 = forwardRef<HTMLHeadingElement, H3Props>(
@@ -72,9 +74,20 @@ export const H3 = forwardRef<HTMLHeadingElement, H3Props>(
         {...props}
       />
     );
-  }
+  },
 );
 
+export const H4 = forwardRef<HTMLHeadingElement, H3Props>(
+  ({ className, ...props }, ref) => {
+    return (
+      <h3
+        ref={ref}
+        className={cn("text-lg font-bold tracking-[1.4] text-muted", className)}
+        {...props}
+      />
+    );
+  },
+);
 export const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ className, size, variant, ...props }, ref) => {
     return (
@@ -84,7 +97,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 export const SecondaryText = forwardRef<
@@ -99,6 +112,7 @@ export const SecondaryText = forwardRef<
 H1.displayName = "H1";
 H2.displayName = "H2";
 H3.displayName = "H3";
+H4.displayName = "H4";
 SecondaryText.displayName = "SecondaryText";
 
 Text.displayName = "Text";
