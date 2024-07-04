@@ -26,7 +26,7 @@ export const CTASection = () => {
           alt="CTA Section"
           width={500}
           height={500}
-          className="w-full basis-[30%]"
+          className="hidden w-full basis-[30%] lg:block"
         />
       </div>
     </section>

@@ -8,7 +8,7 @@ import { teamMembers } from "@/constants/team";
 const Page = () => {
   return (
     <>
-      <section className="w-full pb-24 pt-14">
+      <section className="w-full pb-16 pt-8 md:pb-24 md:pt-14">
         <div className="container space-y-8 text-center">
           <div className="space-y-3 text-center">
             <H1>
@@ -25,13 +25,13 @@ const Page = () => {
             alt="Services"
             width={1152}
             height={477}
-            className="h-[477px] w-full rounded-3xl object-cover"
+            className="aspect-square w-full rounded-3xl object-cover md:aspect-[1152/447]"
           />
         </div>
       </section>
 
-      <section className="w-full pb-24">
-        <div className="container flex max-w-[988px] items-center gap-[74px]">
+      <section className="w-full pb-16 md:pb-24">
+        <div className="container flex max-w-[988px] flex-col items-center gap-6 md:flex-row md:gap-[74px]">
           <div className="flex-1 space-y-4">
             <H2>Our Mission</H2>
             <Text>
@@ -53,8 +53,8 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="w-full pb-24">
-        <div className="container flex max-w-[988px] flex-row-reverse items-center gap-[74px]">
+      <section className="w-full pb-16 md:pb-24">
+        <div className="container flex max-w-[988px] flex-col items-center gap-6 md:flex-row-reverse md:gap-[74px]">
           <div className="flex-1 space-y-4">
             <H2>Our Values</H2>
             <Text>
@@ -84,43 +84,43 @@ const Page = () => {
             className="max-w-[780px]"
           />
 
-          <div className="w-full space-y-14">
-            <div className="flex w-full justify-between gap-16">
+          <div className="w-full space-y-10 md:space-y-14">
+            <div className="flex w-full flex-wrap items-center justify-between gap-10 md:flex-row md:gap-16">
               {teamMembers.slice(0, 3).map((member) => (
                 <div
                   key={member.name}
-                  className="flex w-full max-w-[212px] flex-col items-center gap-5 text-center"
+                  className="flex w-full flex-col items-center gap-3 text-center md:max-w-[212px] md:gap-5"
                 >
                   <Image
                     src={member.imageUrl}
                     alt={member.name}
                     width={170}
                     height={170}
-                    className="aspect-square h-[170px] w-[170px] rounded-full object-cover"
+                    className="aspect-square h-24 w-24 rounded-full object-cover md:h-[170px] md:w-[170px]"
                   />
 
-                  <div className="space-y-2 text-center">
+                  <div className="text-center md:space-y-2">
                     <H3>{member.name}</H3>
                     <Text size="sm">{member.title}</Text>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mx-auto flex w-full max-w-[584px] justify-between gap-16">
+            <div className="mx-auto flex w-full max-w-[584px] flex-col justify-between gap-10 md:flex-row md:gap-16">
               {teamMembers.slice(3, 5).map((member) => (
                 <div
                   key={member.name}
-                  className="flex w-full max-w-[212px] flex-col items-center gap-5 text-center"
+                  className="flex w-full flex-col items-center gap-3 text-center md:max-w-[212px] md:gap-5"
                 >
                   <Image
                     src={member.imageUrl}
                     alt={member.name}
                     width={170}
                     height={170}
-                    className="aspect-square h-[170px] w-[170px] rounded-full object-cover"
+                    className="aspect-square h-24 w-24 rounded-full object-cover md:h-[170px] md:w-[170px]"
                   />
 
-                  <div className="space-y-2 text-center">
+                  <div className="text-center md:space-y-2">
                     <H3>{member.name}</H3>
                     <Text size="sm">{member.title}</Text>
                   </div>

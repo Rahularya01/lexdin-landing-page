@@ -70,7 +70,7 @@ export const H3 = forwardRef<HTMLHeadingElement, H3Props>(
     return (
       <h3
         ref={ref}
-        className={cn("text-2xl font-bold text-muted", className)}
+        className={cn("text-xl font-bold text-muted lg:text-2xl", className)}
         {...props}
       />
     );

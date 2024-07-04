@@ -25,7 +25,7 @@ const Page = () => {
             alt="Services"
             width={1152}
             height={477}
-            className="h-[477px] w-full rounded-3xl object-cover"
+            className="aspect-square w-full rounded-3xl object-cover md:aspect-[1152/447]"
           />
         </div>
       </section>

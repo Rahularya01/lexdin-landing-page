@@ -7,8 +7,8 @@ import React from "react";
 const Page = () => {
   return (
     <>
-      <section className="w-full py-24">
-        <div className="container flex items-end justify-between gap-[60px]">
+      <section className="w-full py-16 md:py-24">
+        <div className="container flex flex-col items-end justify-between gap-[60px] lg:flex-row">
           <div className="w-full space-y-8">
             <div className="space-y-2">
               <H2>
