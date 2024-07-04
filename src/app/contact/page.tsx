@@ -24,7 +24,7 @@ const Page = () => {
 
           <div className="basis-[65%] space-y-[50px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.4310995252667!2d76.68200921129731!3d30.70627887449115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef378338c3cd%3A0xa54cc7cd6806cc17!2sVibe%20Internet%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1720077126563!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.563768603084!2d77.2928167!3d28.432417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdde47d61ab55%3A0x6db6431ca91aa15b!2sMahesh%20Apartments%2C%20GH18%2C%20Part%203%2C%20Sector%2021C%2C%20Faridabad%2C%20Haryana%20121001!5e0!3m2!1sen!2sin!4v1720112922107!5m2!1sen!2sin"
               className="h-[277px] w-full max-w-[415px] rounded-lg"
               style={{ border: "0" }}
               allowFullScreen
@@ -41,9 +41,9 @@ const Page = () => {
                     <h4 className="text-base font-semibold leading-[1.4] text-muted">
                       {item.title}
                     </h4>
-                    <Text className="text-sm text-muted">
+                    <Link href={item.href} className="text-sm text-muted">
                       {item.description}
-                    </Text>
+                    </Link>
                   </div>
                 </li>
               ))}

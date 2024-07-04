@@ -36,7 +36,7 @@ export default function Home() {
               Learn More
             </Link>
 
-            <div className="flex items-center justify-center gap-3 pt-6 md:gap-[31px]">
+            <div className="flex items-center justify-center gap-3 pt-6 md:gap-[31px] lg:items-start lg:justify-start">
               {stats.map((stat, index) => (
                 <div
                   key={stat.name}
@@ -71,7 +71,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-16 md:py-24">
+      <section className="relative w-full py-16 md:py-24">
+        <div className="absolute left-[-100px] top-[-90px] hidden h-32 w-32 rounded-full bg-secondary lg:left-[-170px] lg:block lg:h-[296px] lg:w-[296px]" />
         <div className="container space-y-[80px]">
           <SectionHeading
             className="max-w-[780px]"
@@ -87,7 +88,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full pb-16 pt-8 md:pb-24 md:pt-14">
+      <section className="relative w-full pb-16 pt-8 md:pb-24 md:pt-14">
+        <div className="absolute right-[-100px] top-[-90px] h-32 w-32 rounded-full bg-primary lg:right-[-172px] lg:h-[296px] lg:w-[296px]" />
+
         <div className="container flex flex-col items-center gap-12 md:gap-[72px] lg:flex-row">
           <Image
             src="/images/why_choose_us.png"
@@ -96,7 +99,10 @@ export default function Home() {
             height={500}
             className="aspect-square w-full object-cover md:h-[500px] md:w-[500px] lg:flex-shrink-0"
           />
-          <div className="space-y-[22px]">
+          <div className="relative space-y-[22px]">
+            <div className="absolute -left-6 -top-3.5 h-5 w-5 rounded-full bg-secondary" />
+            <div className="absolute -top-2 right-0 h-5 w-5 rounded-full bg-secondary" />
+
             <H2>Why Choose Us?</H2>
             <Text>
               Our expert IT consulting services empower businesses to harness
@@ -136,7 +142,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full pb-16 pt-8 md:pb-24 md:pt-[46px]">
+      <section className="relative w-full pb-16 pt-8 md:pb-24 md:pt-[46px]">
+        <div className="absolute left-[-178px] top-[-63px] hidden h-[266px] w-[266px] rounded-full bg-secondary lg:block" />
+        <div className="absolute bottom-[-73px] right-[-90px] h-28 w-28 rounded-full bg-primary lg:right-[-150px] lg:h-[231px] lg:w-[231px]" />
+
         <div className="container space-y-4">
           <SectionHeading
             className="max-w-[780px]"

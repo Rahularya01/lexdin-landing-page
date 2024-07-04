@@ -8,7 +8,8 @@ import { teamMembers } from "@/constants/team";
 const Page = () => {
   return (
     <>
-      <section className="w-full pb-16 pt-8 md:pb-24 md:pt-14">
+      <section className="relative w-full pb-16 pt-8 md:pb-24 md:pt-14">
+        <div className="absolute left-[-90px] top-[26px] h-28 w-28 rounded-full bg-secondary lg:left-[-140px] lg:h-[238px] lg:w-[238px]" />
         <div className="container space-y-8 text-center">
           <div className="space-y-3 text-center">
             <H1>
@@ -76,7 +77,10 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="w-full pb-24">
+      <section className="relative w-full pb-24">
+        <div className="absolute left-[-148px] top-[26px] h-32 w-32 rounded-full bg-secondary lg:h-[244px] lg:w-[244px]" />
+        <div className="absolute bottom-[58px] right-[-80px] h-28 w-28 rounded-full bg-primary lg:right-[-147px] lg:h-[244px] lg:w-[244px]" />
+
         <div className="container max-w-[988px] space-y-16">
           <SectionHeading
             title="Meet Our Experts"

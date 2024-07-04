@@ -12,9 +12,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Text } from "@/components/ui/typography";
+import { useToast } from "@/components/ui/use-toast";
+import { careerFormEmailTemplate } from "@/lib/email-templates";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CloudUpload } from "lucide-react";
-import React from "react";
+import axios from "axios";
+import { CloudUpload, Loader } from "lucide-react";
+import { MailOptions } from "nodemailer/lib/json-transport";
 import Dropzone from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -51,12 +54,58 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 export const CareerForm = () => {
+  const { toast } = useToast();
+
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: FormSchema) => {
-    console.log(data);
+  const onSubmit = async (data: FormSchema) => {
+    // data.file
+    const payload: MailOptions = {
+      from: process.env.NEXT_PUBLIC_SEND_CONTACT_INFO_TO_EMAIL as string,
+      to: process.env.NEXT_PUBLIC_SEND_CONTACT_INFO_TO_EMAIL as string,
+      subject: "New Career Request",
+      html: careerFormEmailTemplate({
+        email: data.email,
+        name: data.firstName + " " + data.lastName,
+        positionApplied: data.positionApplied,
+        phone: data.phoneNumber,
+        message: data.message ?? "No message",
+      }),
+    };
+
+    try {
+      const response = await axios.post("/api/send-email", payload);
+
+      await response.data;
+      if (response.status === 200) {
+        form.reset({
+          email: "",
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          positionApplied: "",
+          message: "",
+          file: undefined,
+        });
+
+        toast({
+          title: "Form Submitted",
+          description: "We will get back to you shortly.",
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        variant: "destructive",
+      });
+    }
   };
   return (
     <Form {...form}>
@@ -90,7 +139,6 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="email"
@@ -104,7 +152,6 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="phoneNumber"
@@ -118,7 +165,6 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="positionApplied"
@@ -132,7 +178,6 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="message"
@@ -146,7 +191,6 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="file"
@@ -191,8 +235,16 @@ export const CareerForm = () => {
             </FormItem>
           )}
         />
-
-        <Button className="col-span-2 w-full">Submit</Button>
+        <Button
+          disabled={form.formState.isSubmitting}
+          className="col-span-2 w-full"
+        >
+          {form.formState.isSubmitting ? (
+            <Loader className="animate-spin" />
+          ) : (
+            "Submit"
+          )}
+        </Button>{" "}
       </form>
     </Form>
   );

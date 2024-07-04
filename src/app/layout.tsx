@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster />
+
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen w-full overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>

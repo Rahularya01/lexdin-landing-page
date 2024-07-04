@@ -13,18 +13,21 @@ export const info = [
   {
     icon: <MapPin />,
     title: "Address",
+    href: "https://maps.app.goo.gl/T9P5vCk7RMJd9BMGA",
     description:
-      "1234 Innovation Drive, Suite 567, Tech City, TX 78901, United States",
+      "Flat 203, Mahesh Apartment, Sector 21 C, Faridabad, Haryana. 121001",
   },
   {
     icon: <Mail />,
     title: "Email",
-    description: "aryarahul819@gmail.com",
+    href: "mailto:vibeglobalitsolutions@gmail.com",
+    description: "vibeglobalitsolutions@gmail.com",
   },
   {
     icon: <Phone />,
     title: "Phone",
-    description: "(123) 456-7890",
+    href: "tel:8586977838",
+    description: "8586977838",
   },
 ];
 

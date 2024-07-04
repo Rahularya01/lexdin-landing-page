@@ -7,7 +7,9 @@ import React from "react";
 const Page = () => {
   return (
     <>
-      <section className="w-full pb-24 pt-14">
+      <section className="relative w-full pb-24 pt-14">
+        <div className="absolute left-[-90px] top-[26px] h-28 w-28 rounded-full bg-secondary lg:left-[-140px] lg:h-[238px] lg:w-[238px]" />
+
         <div className="container space-y-8 text-center">
           <div className="space-y-3 text-center">
             <H1>
