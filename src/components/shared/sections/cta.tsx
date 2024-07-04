@@ -24,9 +24,9 @@ export const CTASection = () => {
         <Image
           src="/images/cta_img.png"
           alt="CTA Section"
-          width={457}
-          height={341}
-          className="w-full max-w-[420px]"
+          width={500}
+          height={500}
+          className="w-full basis-[30%]"
         />
       </div>
     </section>
