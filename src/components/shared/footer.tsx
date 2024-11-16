@@ -16,7 +16,7 @@ export const Footer = () => {
               alt="Logo"
               width={100}
               height={100}
-              className="aspect-square w-full max-w-[100px]"
+              className="w-full max-w-[140px]"
             />
           </Link>
           <Text size="sm" className="font-normal text-white">

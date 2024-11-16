@@ -13,10 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 231 47% 35%;
+    --primary: 197 29% 31%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 28 89% 65%;
+    --secondary: 47 73% 58%;
     --secondary-foreground: 231 47% 35%;
 
     --muted: 0 0% 15%;
@@ -70,6 +70,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

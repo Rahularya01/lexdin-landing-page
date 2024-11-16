@@ -37,7 +37,7 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "sticky left-0 top-0 z-40 w-full bg-white py-2.5 transition-shadow",
+        "sticky left-0 top-0 z-40 w-full bg-white py-4 transition-shadow",
         {
           "shadow-md shadow-black/5": isScrolled,
         },
@@ -91,7 +91,7 @@ export const Header = () => {
             alt="Vibe IT Solutions"
             width={70}
             height={70}
-            className="w-14 md:w-[70px]"
+            className="w-full max-w-[120px]"
           />
         </Link>
 
